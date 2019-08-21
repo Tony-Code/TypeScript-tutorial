@@ -1,0 +1,858 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>对象的类型——接口 · TypeScript入门教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tony">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../source/css/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="type-of-array.html" />
+    
+    
+    <link rel="prev" href="union-types.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Tony-Code","repo":"TypeScript-tutorial","type":"star","size":"small","count":true}]};
+    </script>
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/favicon.ico'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../source/images/favicon.ico">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../source/images/favicon.ico">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/what-is-typescript.html">
+            
+                <a href="../introduction/what-is-typescript.html">
+            
+                    
+                    什么是 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/get-typescript.html">
+            
+                <a href="../introduction/get-typescript.html">
+            
+                    
+                    安装 TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/hello-typescript.html">
+            
+                <a href="../introduction/hello-typescript.html">
+            
+                    
+                    Hello TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="primitive-data-types.html">
+            
+                <a href="primitive-data-types.html">
+            
+                    
+                    原始数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="any.html">
+            
+                <a href="any.html">
+            
+                    
+                    任意值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="type-inference.html">
+            
+                <a href="type-inference.html">
+            
+                    
+                    类型推论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="union-types.html">
+            
+                <a href="union-types.html">
+            
+                    
+                    联合类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="type-of-object-interfaces.html">
+            
+                <a href="type-of-object-interfaces.html">
+            
+                    
+                    对象的类型——接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="type-of-array.html">
+            
+                <a href="type-of-array.html">
+            
+                    
+                    数组的类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="type-of-function.html">
+            
+                <a href="type-of-function.html">
+            
+                    
+                    函数的类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="type-assertion.html">
+            
+                <a href="type-assertion.html">
+            
+                    
+                    类型断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="declaration-files.html">
+            
+                <a href="declaration-files.html">
+            
+                    
+                    声明文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="built-in-objects.html">
+            
+                <a href="built-in-objects.html">
+            
+                    
+                    内置对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../advanced/type-aliases.html">
+            
+                <a href="../advanced/type-aliases.html">
+            
+                    
+                    类型别名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../advanced/string-literal-types.html">
+            
+                <a href="../advanced/string-literal-types.html">
+            
+                    
+                    字符串字面量类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../advanced/tuple.html">
+            
+                <a href="../advanced/tuple.html">
+            
+                    
+                    元组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../advanced/enum.html">
+            
+                <a href="../advanced/enum.html">
+            
+                    
+                    枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../advanced/class.html">
+            
+                <a href="../advanced/class.html">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../advanced/class-and-interfaces.html">
+            
+                <a href="../advanced/class-and-interfaces.html">
+            
+                    
+                    类与接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../advanced/generics.html">
+            
+                <a href="../advanced/generics.html">
+            
+                    
+                    泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../advanced/declaration-merging.html">
+            
+                <a href="../advanced/declaration-merging.html">
+            
+                    
+                    声明合并
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../advanced/further-reading.html">
+            
+                <a href="../advanced/further-reading.html">
+            
+                    
+                    扩展阅读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../engineering/">
+            
+                <a href="../engineering/">
+            
+                    
+                    工程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../engineering/lint.html">
+            
+                <a href="../engineering/lint.html">
+            
+                    
+                    代码检查
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../thanks/">
+            
+                <a href="../thanks/">
+            
+                    
+                    感谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >对象的类型——接口</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x2014;&#x2014;&#x63A5;&#x53E3;">&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x2014;&#x2014;&#x63A5;&#x53E3;</h1>
+<p>&#x5728; TypeScript &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x63A5;&#x53E3;&#xFF08;Interfaces&#xFF09;&#x6765;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;&#x63A5;&#x53E3;">&#x4EC0;&#x4E48;&#x662F;&#x63A5;&#x53E3;</h2>
+<p>&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x63A5;&#x53E3;&#xFF08;Interfaces&#xFF09;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5B83;&#x662F;&#x5BF9;&#x884C;&#x4E3A;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x800C;&#x5177;&#x4F53;&#x5982;&#x4F55;&#x884C;&#x52A8;&#x9700;&#x8981;&#x7531;&#x7C7B;&#xFF08;classes&#xFF09;&#x53BB;&#x5B9E;&#x73B0;&#xFF08;implement&#xFF09;&#x3002;</p>
+<p>TypeScript &#x4E2D;&#x7684;&#x63A5;&#x53E3;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7075;&#x6D3B;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x9664;&#x4E86;&#x53EF;&#x7528;&#x4E8E;<a href="../advanced/class-and-interfaces.html#&#x7C7B;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;">&#x5BF9;&#x7C7B;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x884C;&#x4E3A;&#x8FDB;&#x884C;&#x62BD;&#x8C61;</a>&#x4EE5;&#x5916;&#xFF0C;&#x4E5F;&#x5E38;&#x7528;&#x4E8E;&#x5BF9;&#x300C;&#x5BF9;&#x8C61;&#x7684;&#x5F62;&#x72B6;&#xFF08;Shape&#xFF09;&#x300D;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#x3002;</p>
+<h2 id="&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;">&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;</h2>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    name: <span class="hljs-built_in">string</span>;
+    age: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    name: <span class="hljs-string">&apos;Tom&apos;</span>,
+    age: <span class="hljs-number">25</span>
+};
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x63A5;&#x53E3; <code>Person</code>&#xFF0C;&#x63A5;&#x7740;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53D8;&#x91CF; <code>tom</code>&#xFF0C;&#x5B83;&#x7684;&#x7C7B;&#x578B;&#x662F; <code>Person</code>&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x7EA6;&#x675F;&#x4E86; <code>tom</code> &#x7684;&#x5F62;&#x72B6;&#x5FC5;&#x987B;&#x548C;&#x63A5;&#x53E3; <code>Person</code> &#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x63A5;&#x53E3;&#x4E00;&#x822C;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;&#x3002;<a href="https://msdn.microsoft.com/en-us/library/8bc1fexb%28v=vs.71%29.aspx" target="_blank">&#x6709;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x4F1A;&#x5EFA;&#x8BAE;&#x63A5;&#x53E3;&#x7684;&#x540D;&#x79F0;&#x52A0;&#x4E0A; <code>I</code> &#x524D;&#x7F00;</a>&#x3002;</p>
+<p>&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x6BD4;&#x63A5;&#x53E3;&#x5C11;&#x4E86;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    name: <span class="hljs-built_in">string</span>;
+    age: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    name: <span class="hljs-string">&apos;Tom&apos;</span>
+};
+
+<span class="hljs-comment">// index.ts(6,5): error TS2322: Type &apos;{ name: string; }&apos; is not assignable to type &apos;Person&apos;.</span>
+<span class="hljs-comment">//   Property &apos;age&apos; is missing in type &apos;{ name: string; }&apos;.</span>
+</code></pre>
+<p>&#x591A;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x4E5F;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    name: <span class="hljs-built_in">string</span>;
+    age: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    name: <span class="hljs-string">&apos;Tom&apos;</span>,
+    age: <span class="hljs-number">25</span>,
+    gender: <span class="hljs-string">&apos;male&apos;</span>
+};
+
+<span class="hljs-comment">// index.ts(9,5): error TS2322: Type &apos;{ name: string; age: number; gender: string; }&apos; is not assignable to type &apos;Person&apos;.</span>
+<span class="hljs-comment">//   Object literal may only specify known properties, and &apos;gender&apos; does not exist in type &apos;Person&apos;.</span>
+</code></pre>
+<p>&#x53EF;&#x89C1;&#xFF0C;<strong>&#x8D4B;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x5F62;&#x72B6;&#x5FC5;&#x987B;&#x548C;&#x63A5;&#x53E3;&#x7684;&#x5F62;&#x72B6;&#x4FDD;&#x6301;&#x4E00;&#x81F4;</strong>&#x3002;</p>
+<h2 id="&#x53EF;&#x9009;&#x5C5E;&#x6027;">&#x53EF;&#x9009;&#x5C5E;&#x6027;</h2>
+<p>&#x6709;&#x65F6;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x4E0D;&#x8981;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x5F62;&#x72B6;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x7528;&#x53EF;&#x9009;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    name: <span class="hljs-built_in">string</span>;
+    age?: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    name: <span class="hljs-string">&apos;Tom&apos;</span>
+};
+</code></pre>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    name: <span class="hljs-built_in">string</span>;
+    age?: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    name: <span class="hljs-string">&apos;Tom&apos;</span>,
+    age: <span class="hljs-number">25</span>
+};
+</code></pre>
+<p>&#x53EF;&#x9009;&#x5C5E;&#x6027;&#x7684;&#x542B;&#x4E49;&#x662F;&#x8BE5;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x4E0D;&#x5B58;&#x5728;&#x3002;</p>
+<p>&#x8FD9;&#x65F6;<strong>&#x4ECD;&#x7136;&#x4E0D;&#x5141;&#x8BB8;&#x6DFB;&#x52A0;&#x672A;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;</strong>&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    name: <span class="hljs-built_in">string</span>;
+    age?: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    name: <span class="hljs-string">&apos;Tom&apos;</span>,
+    age: <span class="hljs-number">25</span>,
+    gender: <span class="hljs-string">&apos;male&apos;</span>
+};
+
+<span class="hljs-comment">// examples/playground/index.ts(9,5): error TS2322: Type &apos;{ name: string; age: number; gender: string; }&apos; is not assignable to type &apos;Person&apos;.</span>
+<span class="hljs-comment">//   Object literal may only specify known properties, and &apos;gender&apos; does not exist in type &apos;Person&apos;.</span>
+</code></pre>
+<h2 id="&#x4EFB;&#x610F;&#x5C5E;&#x6027;">&#x4EFB;&#x610F;&#x5C5E;&#x6027;</h2>
+<p>&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x5141;&#x8BB8;&#x6709;&#x4EFB;&#x610F;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    name: <span class="hljs-built_in">string</span>;
+    age?: <span class="hljs-built_in">number</span>;
+    [propName: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    name: <span class="hljs-string">&apos;Tom&apos;</span>,
+    gender: <span class="hljs-string">&apos;male&apos;</span>
+};
+</code></pre>
+<p>&#x4F7F;&#x7528; <code>[propName: string]</code> &#x5B9A;&#x4E49;&#x4E86;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x53D6; <code>string</code> &#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;<strong>&#x4E00;&#x65E6;&#x5B9A;&#x4E49;&#x4E86;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x786E;&#x5B9A;&#x5C5E;&#x6027;&#x548C;&#x53EF;&#x9009;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;&#x90FD;&#x5FC5;&#x987B;&#x662F;&#x5B83;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x5B50;&#x96C6;</strong>&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    name: <span class="hljs-built_in">string</span>;
+    age?: <span class="hljs-built_in">number</span>;
+    [propName: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    name: <span class="hljs-string">&apos;Tom&apos;</span>,
+    age: <span class="hljs-number">25</span>,
+    gender: <span class="hljs-string">&apos;male&apos;</span>
+};
+
+<span class="hljs-comment">// index.ts(3,5): error TS2411: Property &apos;age&apos; of type &apos;number&apos; is not assignable to string index type &apos;string&apos;.</span>
+<span class="hljs-comment">// index.ts(7,5): error TS2322: Type &apos;{ [x: string]: string | number; name: string; age: number; gender: string; }&apos; is not assignable to type &apos;Person&apos;.</span>
+<span class="hljs-comment">//   Index signatures are incompatible.</span>
+<span class="hljs-comment">//     Type &apos;string | number&apos; is not assignable to type &apos;string&apos;.</span>
+<span class="hljs-comment">//       Type &apos;number&apos; is not assignable to type &apos;string&apos;.</span>
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;&#xFF0C;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x5141;&#x8BB8;&#x662F; <code>string</code>&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x9009;&#x5C5E;&#x6027; <code>age</code> &#x7684;&#x503C;&#x5374;&#x662F; <code>number</code>&#xFF0C;<code>number</code> &#x4E0D;&#x662F; <code>string</code> &#x7684;&#x5B50;&#x5C5E;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x62A5;&#x9519;&#x4E86;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5728;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x6B64;&#x65F6; <code>{ name: &apos;Tom&apos;, age: 25, gender: &apos;male&apos; }</code> &#x7684;&#x7C7B;&#x578B;&#x88AB;&#x63A8;&#x65AD;&#x6210;&#x4E86; <code>{ [x: string]: string | number; name: string; age: number; gender: string; }</code>&#xFF0C;&#x8FD9;&#x662F;&#x8054;&#x5408;&#x7C7B;&#x578B;&#x548C;&#x63A5;&#x53E3;&#x7684;&#x7ED3;&#x5408;&#x3002;</p>
+<h2 id="&#x53EA;&#x8BFB;&#x5C5E;&#x6027;">&#x53EA;&#x8BFB;&#x5C5E;&#x6027;</h2>
+<p>&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x5B57;&#x6BB5;&#x53EA;&#x80FD;&#x5728;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x88AB;&#x8D4B;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x7528; <code>readonly</code> &#x5B9A;&#x4E49;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    readonly id: <span class="hljs-built_in">number</span>;
+    name: <span class="hljs-built_in">string</span>;
+    age?: <span class="hljs-built_in">number</span>;
+    [propName: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    id: <span class="hljs-number">89757</span>,
+    name: <span class="hljs-string">&apos;Tom&apos;</span>,
+    gender: <span class="hljs-string">&apos;male&apos;</span>
+};
+
+tom.id = <span class="hljs-number">9527</span>;
+
+<span class="hljs-comment">// index.ts(14,5): error TS2540: Cannot assign to &apos;id&apos; because it is a constant or a read-only property.</span>
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528; <code>readonly</code> &#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027; <code>id</code> &#x521D;&#x59CB;&#x5316;&#x540E;&#xFF0C;&#x53C8;&#x88AB;&#x8D4B;&#x503C;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x62A5;&#x9519;&#x4E86;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF0C;&#x53EA;&#x8BFB;&#x7684;&#x7EA6;&#x675F;&#x5B58;&#x5728;&#x4E8E;&#x7B2C;&#x4E00;&#x6B21;&#x7ED9;&#x5BF9;&#x8C61;&#x8D4B;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x7ED9;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#x8D4B;&#x503C;&#x7684;&#x65F6;&#x5019;</strong>&#xFF1A;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Person {
+    readonly id: <span class="hljs-built_in">number</span>;
+    name: <span class="hljs-built_in">string</span>;
+    age?: <span class="hljs-built_in">number</span>;
+    [propName: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span>;
+}
+
+<span class="hljs-keyword">let</span> tom: Person = {
+    name: <span class="hljs-string">&apos;Tom&apos;</span>,
+    gender: <span class="hljs-string">&apos;male&apos;</span>
+};
+
+tom.id = <span class="hljs-number">89757</span>;
+
+<span class="hljs-comment">// index.ts(8,5): error TS2322: Type &apos;{ name: string; gender: string; }&apos; is not assignable to type &apos;Person&apos;.</span>
+<span class="hljs-comment">//   Property &apos;id&apos; is missing in type &apos;{ name: string; gender: string; }&apos;.</span>
+<span class="hljs-comment">// index.ts(13,5): error TS2540: Cannot assign to &apos;id&apos; because it is a constant or a read-only property.</span>
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;&#xFF0C;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x6709;&#x4E24;&#x5904;&#xFF0C;&#x7B2C;&#x4E00;&#x5904;&#x662F;&#x5728;&#x5BF9; <code>tom</code> &#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6CA1;&#x6709;&#x7ED9; <code>id</code> &#x8D4B;&#x503C;&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x5904;&#x662F;&#x5728;&#x7ED9; <code>tom.id</code> &#x8D4B;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7531;&#x4E8E;&#x5B83;&#x662F;&#x53EA;&#x8BFB;&#x5C5E;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x62A5;&#x9519;&#x4E86;&#x3002;</p>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="http://www.typescriptlang.org/docs/handbook/interfaces.html" target="_blank">Interfaces</a>&#xFF08;<a href="https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Interfaces.html" target="_blank">&#x4E2D;&#x6587;&#x7248;</a>&#xFF09;</li>
+</ul>
+<hr>
+<ul>
+<li><a href="union-types.html">&#x4E0A;&#x4E00;&#x7AE0;&#xFF1A;&#x8054;&#x5408;&#x7C7B;&#x578B;</a></li>
+<li><a href="type-of-array.html">&#x4E0B;&#x4E00;&#x7AE0;&#xFF1A;&#x6570;&#x7EC4;&#x7684;&#x7C7B;&#x578B;</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">&#xA9; Tony all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-8-21 14:29:34
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="union-types.html" class="navigation navigation-prev " aria-label="Previous page: 联合类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="type-of-array.html" class="navigation navigation-next " aria-label="Next page: 数组的类型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"对象的类型——接口","level":"1.3.5","depth":2,"next":{"title":"数组的类型","level":"1.3.6","depth":2,"path":"docs/basics/type-of-array.md","ref":"docs/basics/type-of-array.md","articles":[]},"previous":{"title":"联合类型","level":"1.3.4","depth":2,"path":"docs/basics/union-types.md","ref":"docs/basics/union-types.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","chapter-fold","code","favicon","tbfed-pagefooter","-sharing","sharing-plus","github","github-buttons","lightbox"],"styles":{"website":"/source/css/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Tony","modify_label":"该文件修订时间：","modify_format":"2019-8-21 14:29:34"},"chapter-fold":{},"github":{"url":"https://github.com/Tony-Code"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/source/images/favicon.ico","bookmark":"/source/images/favicon.ico","appleTouch":"/source/images/favicon.ico","appleTouchMore":{"120x120":"/source/images/favicon.ico","180x180":"/source/images/favicon.ico"}},"lightbox":{"jquery":true},"github-buttons":{"buttons":[{"user":"Tony-Code","repo":"TypeScript-tutorial","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["weibo","qq","qzone","douban"],"douban":false,"facebook":true,"weibo":false,"twitter":true,"pocket":false,"google":true,"qzone":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tony","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TypeScript入门教程","language":"zh-hans","gitbook":"3.2.3","description":"TypeScript入门教程"},"file":{"path":"docs/basics/type-of-object-interfaces.md","mtime":"2019-06-20T01:06:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-21T06:49:51.566Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
