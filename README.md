@@ -5,5 +5,5 @@
 
 原文转至 [typescript-tutorial](https://github.com/xcatliu/typescript-tutorial)，仅当个人笔记供学习收藏和查看。
 
-
+### 点击[在线预览](https://tony-code.github.io/TypeScript-tutorial/book/)
 
